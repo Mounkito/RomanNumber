@@ -16,4 +16,10 @@ public class RomanNumberTest {
         Converter converter = new Converter();
         Assertions.assertThat(converter.toRomanNumber(2)).isEqualTo("II");
     }
+
+    @Test
+    public void should_return_three_in_roman() throws Exception {
+        Converter converter = new Converter();
+        Assertions.assertThat(converter.toRomanNumber(3)).isEqualTo("III");
+    }
 }
