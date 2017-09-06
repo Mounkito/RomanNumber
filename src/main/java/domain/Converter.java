@@ -25,6 +25,8 @@ public class Converter {
             return "VIII";
         if(number == 9)
             return "IX";
+        if(number == 10)
+            return "X";
 
         else return "";
     }
