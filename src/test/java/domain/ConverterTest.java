@@ -34,4 +34,10 @@ public class ConverterTest {
         Converter converter = new Converter();
         Assertions.assertThat(converter.toRomanNumber(5)).isEqualTo("V");
     }
+
+    @Test
+    public void should_return_six_in_roman() throws Exception {
+        Converter converter = new Converter();
+        Assertions.assertThat(converter.toRomanNumber(6)).isEqualTo("VI");
+    }
 }

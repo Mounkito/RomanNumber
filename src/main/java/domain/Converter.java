@@ -13,6 +13,8 @@ public class Converter {
             return "IV";
         if(number == 5)
             return "V";
+        if(number == 6)
+            return "VI";
         else return "";
     }
 }
