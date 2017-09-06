@@ -23,6 +23,8 @@ public class Converter {
 
         if(number == 8)
             return "VIII";
+        if(number == 9)
+            return "IX";
 
         else return "";
     }
