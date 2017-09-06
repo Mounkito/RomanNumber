@@ -2,12 +2,13 @@ package domain;
 
 public class Converter {
     public String toRomanNumber(int number) {
-        if(number == 1)
-            return "I";
-        if(number == 2)
-            return "II";
-        if(number == 3)
-            return "III";
+        StringBuilder stringBuilder = new StringBuilder();
+        if(number == 1 || number == 2 || number == 3){
+            for (int i = 0; i < number; i++) {
+                stringBuilder.append("I");
+            }
+            return stringBuilder.toString();
+        }
         else return "";
     }
 }
