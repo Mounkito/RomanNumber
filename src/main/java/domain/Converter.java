@@ -9,6 +9,8 @@ public class Converter {
             }
             return stringBuilder.toString();
         }
+        if(number == 4)
+            return "IV";
         else return "";
     }
 }

@@ -22,4 +22,10 @@ public class RomanNumberTest {
         Converter converter = new Converter();
         Assertions.assertThat(converter.toRomanNumber(3)).isEqualTo("III");
     }
+
+    @Test
+    public void should_return_four_in_roman() throws Exception {
+        Converter converter = new Converter();
+        Assertions.assertThat(converter.toRomanNumber(4)).isEqualTo("IV");
+    }
 }
