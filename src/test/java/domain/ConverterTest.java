@@ -28,4 +28,10 @@ public class ConverterTest {
         Converter converter = new Converter();
         Assertions.assertThat(converter.toRomanNumber(4)).isEqualTo("IV");
     }
+
+    @Test
+    public void should_return_five_in_roman() throws Exception {
+        Converter converter = new Converter();
+        Assertions.assertThat(converter.toRomanNumber(5)).isEqualTo("V");
+    }
 }
