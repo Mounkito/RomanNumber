@@ -46,4 +46,10 @@ public class ConverterTest {
         Converter converter = new Converter();
         Assertions.assertThat(converter.toRomanNumber(7)).isEqualTo("VII");
     }
+
+    @Test
+    public void should_return_eight_in_roman() throws Exception {
+        Converter converter = new Converter();
+        Assertions.assertThat(converter.toRomanNumber(8)).isEqualTo("VIII");
+    }
 }
