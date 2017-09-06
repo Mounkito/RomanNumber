@@ -10,4 +10,10 @@ public class RomanNumberTest {
         Converter converter = new Converter();
         Assertions.assertThat(converter.toRomanNumber(1)).isEqualTo("I");
     }
+
+    @Test
+    public void should_return_two_in_roman() throws Exception {
+        Converter converter = new Converter();
+        Assertions.assertThat(converter.toRomanNumber(2)).isEqualTo("II");
+    }
 }

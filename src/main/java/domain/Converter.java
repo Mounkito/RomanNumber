@@ -2,6 +2,10 @@ package domain;
 
 public class Converter {
     public String toRomanNumber(int number) {
-        return "I";
+        if(number == 1)
+            return "I";
+        if(number == 2)
+            return "II";
+        else return "";
     }
 }
