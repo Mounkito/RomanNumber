@@ -15,6 +15,8 @@ public class Converter {
             return "V";
         if(number == 6)
             return "VI";
+        if(number == 7)
+            return "VII";
         else return "";
     }
 }
