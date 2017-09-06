@@ -3,7 +3,7 @@ package domain;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
-public class RomanNumberTest {
+public class ConverterTest {
 
     @Test
     public void should_return_one_in_roman() throws Exception {
