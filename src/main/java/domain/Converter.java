@@ -17,7 +17,7 @@ public class Converter {
     }
 
     private int createRomanString(StringBuilder stringBuilder, String romanNumber, int valueToConvert, int restToProcess) {
-        if (restToProcess >= valueToConvert) {
+        while (restToProcess >= valueToConvert) {
             stringBuilder.append(romanNumber);
             restToProcess -= valueToConvert;
         }
