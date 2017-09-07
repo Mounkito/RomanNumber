@@ -19,6 +19,15 @@ public enum RomanNumber {
 
 
     public static RomanNumber romanNumberclosest(int arabicNumber) {
-        return ONE;
+        int diff = arabicNumber - ONE.arabicNumber;
+        RomanNumber currentRomanNumber = ONE;
+
+        for (RomanNumber romanNumber : RomanNumber.values()) {
+            if(Math.abs(romanNumber.arabicNumber - arabicNumber) < diff){
+                diff = Math.abs(romanNumber.arabicNumber - arabicNumber);
+                currentRomanNumber = romanNumber;
+            }
+        }
+        return currentRomanNumber;
     }
 }
