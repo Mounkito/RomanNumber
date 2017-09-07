@@ -5,11 +5,9 @@ public class Converter {
         StringBuilder stringBuilder = new StringBuilder();
         int restToProcess = valueToConvert;
 
-        restToProcess = createRomanString(stringBuilder, "X", 10, restToProcess);
-        restToProcess = createRomanString(stringBuilder, "IX", 9, restToProcess);
-        restToProcess = createRomanString(stringBuilder, "V", 5, restToProcess);
-        restToProcess = createRomanString(stringBuilder, "IV", 4, restToProcess);
-
+        for (RomanNumber romanNumber : RomanNumber.values()) {
+            restToProcess = createRomanString(stringBuilder, romanNumber.getRomanNumber(), romanNumber.getArabicNumber(), restToProcess);
+        }
 
         for (int i = 0; i < restToProcess; i++) {
             stringBuilder.append("I");

@@ -1,19 +1,21 @@
 package domain;
 
 public enum RomanNumber {
-    ONE("I" , 1),
-    FIVE("V" , 5),
-    TEN("X" , 10),
-    FIFTY("L" , 50),
-    HUNDRED("C" , 100),
+    THOUSAND("M" , 1000),
     FIVE_HUNDRED("D" , 500),
-    THOUSAND("M" , 1000);
+    HUNDRED("C" , 100),
+    FIFTY("L" , 50),
+    TEN("X" , 10),
+    NINE("IX" , 9),
+    FIVE("V" , 5),
+    FOUR("IV" , 4),
+    ONE("I" , 1);
 
-    private final String Romannumber;
     private final int arabicNumber;
+    private String romanNumber;
 
-    RomanNumber(String RomanNumber, int arabicNumber) {
-        this.Romannumber = RomanNumber;
+    RomanNumber(String romanNumber, int arabicNumber) {
+        this.romanNumber = romanNumber;
         this.arabicNumber = arabicNumber;
     }
 
@@ -29,5 +31,13 @@ public enum RomanNumber {
             }
         }
         return currentRomanNumber;
+    }
+
+    public String getRomanNumber() {
+        return romanNumber;
+    }
+
+    public int getArabicNumber() {
+        return arabicNumber;
     }
 }
