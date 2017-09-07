@@ -5,8 +5,8 @@ public class Converter {
         StringBuilder stringBuilder = new StringBuilder();
 
         if(number == 4){
-            stringBuilder.append("I");
-            number = number + 1;
+            stringBuilder.append("IV");
+            number = number - 4;
         }
 
         if(number >= 5 && number <= 8){
