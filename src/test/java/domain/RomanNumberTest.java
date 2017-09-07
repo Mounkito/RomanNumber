@@ -11,6 +11,11 @@ public class RomanNumberTest {
     }
 
     @Test
+    public void should_return_the_closest_roman_number_V() throws Exception {
+        Assertions.assertThat(RomanNumber.romanNumberclosest(3)).isEqualTo(RomanNumber.ONE);
+    }
+
+    @Test
     public void should_return_the_closest_roman_number_X() throws Exception {
         Assertions.assertThat(RomanNumber.romanNumberclosest(12)).isEqualTo(RomanNumber.TEN);
     }
