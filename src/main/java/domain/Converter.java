@@ -1,31 +1,29 @@
 package domain;
 
 public class Converter {
-    public String toRomanNumber(int number) {
+    public String toRomanNumber(int valueToConvert) {
         StringBuilder stringBuilder = new StringBuilder();
+        int restToProcess = valueToConvert;
 
-        if(number == 4){
-            stringBuilder.append("IV");
-            number = number - 4;
+        restToProcess = createRomanString(stringBuilder, "X", 10, restToProcess);
+        restToProcess = createRomanString(stringBuilder, "IX", 9, restToProcess);
+        restToProcess = createRomanString(stringBuilder, "V", 5, restToProcess);
+        restToProcess = createRomanString(stringBuilder, "IV", 4, restToProcess);
+
+
+        for (int i = 0; i < restToProcess; i++) {
+            stringBuilder.append("I");
         }
+        return stringBuilder.toString();
 
-        if(number >= 5 && number <= 8){
-            stringBuilder.append("V");
-            number = number - 5;
+    }
+
+    private int createRomanString(StringBuilder stringBuilder, String romanNumber, int valueToConvert, int restToProcess) {
+        if (restToProcess >= valueToConvert) {
+            stringBuilder.append(romanNumber);
+            restToProcess -= valueToConvert;
         }
-        if(number >= 0 && number <= 3){
-            for (int i = 0; i < number; i++) {
-                stringBuilder.append("I");
-            }
-            return stringBuilder.toString();
-        }
+        return restToProcess;
 
-
-        if(number == 9)
-            return "IX";
-        if(number == 10)
-            return "X";
-
-        else return "";
     }
 }
