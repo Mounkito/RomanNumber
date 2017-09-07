@@ -4,19 +4,21 @@ public class Converter {
     public String toRomanNumber(int number) {
         StringBuilder stringBuilder = new StringBuilder();
 
-        if(number >= 5 && number < 9){
+        if(number == 4){
+            stringBuilder.append("I");
+            number = number + 1;
+        }
+
+        if(number >= 5 && number <= 8){
             stringBuilder.append("V");
             number = number - 5;
         }
-        if(number == 0 ||number == 1 || number == 2 || number == 3){
+        if(number >= 0 && number <= 3){
             for (int i = 0; i < number; i++) {
                 stringBuilder.append("I");
             }
             return stringBuilder.toString();
         }
-
-        if(number == 4)
-            return "IV";
 
 
         if(number == 9)
