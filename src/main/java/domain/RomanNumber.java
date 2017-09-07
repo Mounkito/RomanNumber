@@ -2,7 +2,9 @@ package domain;
 
 public enum RomanNumber {
     THOUSAND("M" , 1000),
+    NINE_HUNDRED("CM" , 900),
     FIVE_HUNDRED("D" , 500),
+    FOUR_HUNDRED("CD" , 400),
     HUNDRED("C" , 100),
     NINETY("XC" , 90),
     FIFTY("L" , 50),
