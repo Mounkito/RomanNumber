@@ -64,4 +64,10 @@ public class ConverterTest {
         Converter converter = new Converter();
         Assertions.assertThat(converter.toRomanNumber(10)).isEqualTo("X");
     }
+
+    @Test
+    public void should_return_ninety_nine_in_roman() throws Exception {
+        Converter converter = new Converter();
+        Assertions.assertThat(converter.toRomanNumber(99)).isEqualTo("XCIX");
+    }
 }
