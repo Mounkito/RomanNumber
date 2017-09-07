@@ -1,73 +1,20 @@
 package domain;
 
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
+@RunWith(JUnitParamsRunner.class)
 public class ConverterTest {
 
     @Test
-    public void should_return_one_in_roman() throws Exception {
+    @Parameters({"1,I", "2,II", "3,III", "4,IV", "5,V", "6,VI", "7,VII",
+            "8,VIII", "9,IX", "10,X", "45,XLV"})
+    public void should_return_number_in_roman(int arabicNumber, String romanNumber) throws Exception {
         Converter converter = new Converter();
-        Assertions.assertThat(converter.toRomanNumber(1)).isEqualTo("I");
+        Assertions.assertThat(converter.toRomanNumber(arabicNumber)).isEqualTo(romanNumber);
     }
 
-    @Test
-    public void should_return_two_in_roman() throws Exception {
-        Converter converter = new Converter();
-        Assertions.assertThat(converter.toRomanNumber(2)).isEqualTo("II");
-    }
-
-    @Test
-    public void should_return_three_in_roman() throws Exception {
-        Converter converter = new Converter();
-        Assertions.assertThat(converter.toRomanNumber(3)).isEqualTo("III");
-    }
-
-    @Test
-    public void should_return_four_in_roman() throws Exception {
-        Converter converter = new Converter();
-        Assertions.assertThat(converter.toRomanNumber(4)).isEqualTo("IV");
-    }
-
-    @Test
-    public void should_return_five_in_roman() throws Exception {
-        Converter converter = new Converter();
-        Assertions.assertThat(converter.toRomanNumber(5)).isEqualTo("V");
-    }
-
-    @Test
-    public void should_return_six_in_roman() throws Exception {
-        Converter converter = new Converter();
-        Assertions.assertThat(converter.toRomanNumber(6)).isEqualTo("VI");
-    }
-
-    @Test
-    public void should_return_seven_in_roman() throws Exception {
-        Converter converter = new Converter();
-        Assertions.assertThat(converter.toRomanNumber(7)).isEqualTo("VII");
-    }
-
-    @Test
-    public void should_return_eight_in_roman() throws Exception {
-        Converter converter = new Converter();
-        Assertions.assertThat(converter.toRomanNumber(8)).isEqualTo("VIII");
-    }
-
-    @Test
-    public void should_return_nine_in_roman() throws Exception {
-        Converter converter = new Converter();
-        Assertions.assertThat(converter.toRomanNumber(9)).isEqualTo("IX");
-    }
-
-    @Test
-    public void should_return_ten_in_roman() throws Exception {
-        Converter converter = new Converter();
-        Assertions.assertThat(converter.toRomanNumber(10)).isEqualTo("X");
-    }
-
-    @Test
-    public void should_return_ninety_nine_in_roman() throws Exception {
-        Converter converter = new Converter();
-        Assertions.assertThat(converter.toRomanNumber(99)).isEqualTo("XCIX");
-    }
 }
