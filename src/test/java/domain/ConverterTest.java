@@ -72,4 +72,10 @@ public class ConverterTest {
         Assertions.assertThat(converter.toArabicNumber("IX")).isEqualTo(9);
     }
 
+    @Test
+    public void should_return_ten_in_arabic_number() throws Exception {
+        Converter converter = new Converter();
+        Assertions.assertThat(converter.toArabicNumber("X")).isEqualTo(10);
+    }
+
 }

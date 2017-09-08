@@ -30,6 +30,8 @@ public class Converter {
             return 4;
         if (romanNumber.equals("IX"))
             return 9;
+        if (romanNumber.equals("X"))
+            return 10;
 
         char[] romanNumberCharArray = romanNumber.toCharArray();
         int countChar = 0;
