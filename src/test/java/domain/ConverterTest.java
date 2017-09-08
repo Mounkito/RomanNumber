@@ -18,4 +18,10 @@ public class ConverterTest {
         Assertions.assertThat(converter.toRomanNumber(arabicNumber)).isEqualTo(romanNumber);
     }
 
+    @Test
+    public void should_return_one_in_arabic_number() throws Exception {
+        Converter converter = new Converter();
+        Assertions.assertThat(converter.toArabicNumber("I")).isEqualTo(1);
+    }
+
 }

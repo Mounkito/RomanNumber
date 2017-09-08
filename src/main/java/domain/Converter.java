@@ -24,4 +24,8 @@ public class Converter {
         return restToProcess;
 
     }
+
+    public int toArabicNumber(String romanNumber) {
+            return 1;
+    }
 }
