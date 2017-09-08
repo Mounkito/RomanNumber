@@ -66,4 +66,10 @@ public class ConverterTest {
         Assertions.assertThat(converter.toArabicNumber("VIII")).isEqualTo(8);
     }
 
+    @Test
+    public void should_return_nine_in_arabic_number() throws Exception {
+        Converter converter = new Converter();
+        Assertions.assertThat(converter.toArabicNumber("IX")).isEqualTo(9);
+    }
+
 }
