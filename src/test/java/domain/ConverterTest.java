@@ -24,4 +24,10 @@ public class ConverterTest {
         Assertions.assertThat(converter.toArabicNumber("I")).isEqualTo(1);
     }
 
+    @Test
+    public void should_return_five_in_arabic_number() throws Exception {
+        Converter converter = new Converter();
+        Assertions.assertThat(converter.toArabicNumber("V")).isEqualTo(5);
+    }
+
 }
