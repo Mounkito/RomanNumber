@@ -28,6 +28,8 @@ public class Converter {
     public int toArabicNumber(String romanNumber) {
         if(romanNumber == "I")
             return 1;
+        if (romanNumber == "II")
+            return 2;
         else
             return 5;
     }

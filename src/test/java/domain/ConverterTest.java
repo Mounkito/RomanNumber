@@ -30,4 +30,10 @@ public class ConverterTest {
         Assertions.assertThat(converter.toArabicNumber("V")).isEqualTo(5);
     }
 
+    @Test
+    public void should_return_two_in_arabic_number() throws Exception {
+        Converter converter = new Converter();
+        Assertions.assertThat(converter.toArabicNumber("II")).isEqualTo(2);
+    }
+
 }
