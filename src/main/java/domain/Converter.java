@@ -32,6 +32,8 @@ public class Converter {
             return 4;
         if (romanNumber.equals("VI"))
             return 6;
+        if (romanNumber.equals("VII"))
+            return 7;
 
 
         char[] romanNumberCharArray = romanNumber.toCharArray();

@@ -54,4 +54,10 @@ public class ConverterTest {
         Assertions.assertThat(converter.toArabicNumber("VI")).isEqualTo(6);
     }
 
+    @Test
+    public void should_return_seven_in_arabic_number() throws Exception {
+        Converter converter = new Converter();
+        Assertions.assertThat(converter.toArabicNumber("VII")).isEqualTo(7);
+    }
+
 }
