@@ -30,6 +30,8 @@ public class Converter {
             return 1;
         if (romanNumber.equals("II"))
             return 2;
+        if (romanNumber.equals("III"))
+            return 3;
         else
             return 5;
     }
