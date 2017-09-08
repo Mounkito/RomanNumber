@@ -25,22 +25,26 @@ public class Converter {
 
     }
 
-    public int toArabicNumber(String romanNumber) {
-        if (romanNumber.equals("IV"))
+    public int toArabicNumber(String numberToConvert) {
+        if (numberToConvert.equals("IV"))
             return 4;
-        if (romanNumber.equals("IX"))
+        if (numberToConvert.equals("IX"))
             return 9;
-        if (romanNumber.equals("X"))
+        if (numberToConvert.equals("X"))
             return 10;
 
-        char[] romanNumberCharArray = romanNumber.toCharArray();
+        int countChar = CountCharValue(numberToConvert,'I', 1);
+        countChar += CountCharValue(numberToConvert,'V', 5);
+        return  countChar;
+    }
+
+    private int CountCharValue(String numberToConvert, char romanNumber, int arabicNumber) {
+        char[] romanNumberCharArray = numberToConvert.toCharArray();
         int countChar = 0;
         for (char romanChar : romanNumberCharArray) {
-            if(romanChar == 'I')
-                countChar++;
-            if(romanChar == 'V')
-                countChar += 5;
+            if(romanChar == romanNumber)
+                countChar += arabicNumber;
         }
-        return  countChar;
+        return countChar;
     }
 }
