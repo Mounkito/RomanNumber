@@ -30,11 +30,10 @@ public class Converter {
             return 4;
         if (numberToConvert.equals("IX"))
             return 9;
-        if (numberToConvert.equals("X"))
-            return 10;
 
         int countChar = CountCharValue(numberToConvert,'I', 1);
         countChar += CountCharValue(numberToConvert,'V', 5);
+        countChar += CountCharValue(numberToConvert,'X', 10);
         return  countChar;
     }
 
