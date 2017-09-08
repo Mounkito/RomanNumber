@@ -26,13 +26,16 @@ public class Converter {
     }
 
     public int toArabicNumber(String romanNumber) {
-        if(romanNumber.equals("I"))
-            return 1;
-        if (romanNumber.equals("II"))
-            return 2;
-        if (romanNumber.equals("III"))
-            return 3;
-        else
+        if (romanNumber.equals("V"))
             return 5;
+        char[] romanNumberCharArray = romanNumber.toCharArray();
+        int countCharOne = 0;
+        for (char romanChar : romanNumberCharArray) {
+            if(romanChar == 'I')
+                countCharOne++;
+        }
+        return  countCharOne;
+
+
     }
 }
