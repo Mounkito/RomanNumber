@@ -48,4 +48,10 @@ public class ConverterTest {
         Assertions.assertThat(converter.toArabicNumber("IV")).isEqualTo(4);
     }
 
+    @Test
+    public void should_return_six_in_arabic_number() throws Exception {
+        Converter converter = new Converter();
+        Assertions.assertThat(converter.toArabicNumber("VI")).isEqualTo(6);
+    }
+
 }
