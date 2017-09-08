@@ -28,6 +28,8 @@ public class Converter {
     public int toArabicNumber(String romanNumber) {
         if (romanNumber.equals("V"))
             return 5;
+        if (romanNumber.equals("IV"))
+            return 4;
         char[] romanNumberCharArray = romanNumber.toCharArray();
         int countCharOne = 0;
         for (char romanChar : romanNumberCharArray) {

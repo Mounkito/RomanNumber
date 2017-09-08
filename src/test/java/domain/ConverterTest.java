@@ -35,10 +35,17 @@ public class ConverterTest {
         Converter converter = new Converter();
         Assertions.assertThat(converter.toArabicNumber("II")).isEqualTo(2);
     }
+
     @Test
     public void should_return_three_in_arabic_number() throws Exception {
         Converter converter = new Converter();
         Assertions.assertThat(converter.toArabicNumber("III")).isEqualTo(3);
+    }
+
+    @Test
+    public void should_return_four_in_arabic_number() throws Exception {
+        Converter converter = new Converter();
+        Assertions.assertThat(converter.toArabicNumber("IV")).isEqualTo(4);
     }
 
 }
