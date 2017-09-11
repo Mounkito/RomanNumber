@@ -31,18 +31,24 @@ public class Converter {
         if (numberToConvert.equals("IX"))
             return 9;
 
-        int countChar = CountCharValue(numberToConvert,'I', 1);
-        countChar += CountCharValue(numberToConvert,'V', 5);
-        countChar += CountCharValue(numberToConvert,'X', 10);
+        int countChar = CountCharValue(numberToConvert,"I", 1);
+        countChar += CountCharValue(numberToConvert,"V", 5);
+        countChar += CountCharValue(numberToConvert,"X", 10);
         return  countChar;
     }
 
-    private int CountCharValue(String numberToConvert, char romanNumber, int arabicNumber) {
-        char[] romanNumberCharArray = numberToConvert.toCharArray();
+    private int CountCharValue(String numberToConvert, String romanNumber, int arabicNumber) {
         int countChar = 0;
-        for (char romanChar : romanNumberCharArray) {
-            if(romanChar == romanNumber)
+        for (int i = 0; i < numberToConvert.length(); i++) {
+            //Double element case ex : IV
+            if(i+2 < numberToConvert.length() && numberToConvert.substring(i,i+2).equals(romanNumber)){
                 countChar += arabicNumber;
+                i++;
+            }
+            //One element case ex : V
+            if(numberToConvert.substring(i,i+1).equals(romanNumber)){
+                countChar += arabicNumber;
+            }
         }
         return countChar;
     }
