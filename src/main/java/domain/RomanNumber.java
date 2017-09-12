@@ -16,7 +16,7 @@ public enum RomanNumber {
     ONE("I", 1);
 
     private final int arabicNumber;
-    private String romanNumber;
+    private final String romanNumber;
 
     RomanNumber(String romanNumber, int arabicNumber) {
         this.romanNumber = romanNumber;

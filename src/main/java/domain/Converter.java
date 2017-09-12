@@ -1,6 +1,6 @@
 package domain;
 
-public class Converter {
+class Converter {
 
     public String toRomanNumber(int valueToConvert) {
         StringBuilder stringBuilder = new StringBuilder();
@@ -18,7 +18,7 @@ public class Converter {
     public int toArabicNumber(String numberToConvert) {
         int arabicResult = 0;
         for (RomanNumber romanNumber : RomanNumber.values()) {
-            while (numberToConvert.startsWith(romanNumber.getRomanNumber())){
+            while (numberToConvert.startsWith(romanNumber.getRomanNumber())) {
                 arabicResult += romanNumber.getArabicNumber();
                 numberToConvert = numberToConvert.substring(romanNumber.getRomanNumber().length());
             }
