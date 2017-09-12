@@ -26,13 +26,11 @@ public class Converter {
     }
 
     public int toArabicNumber(String numberToConvert) {
-        if (numberToConvert.equals("IV"))
-            return 4;
-        if (numberToConvert.equals("IX"))
-            return 9;
 
         int countChar = CountCharValue(numberToConvert,"I", 1);
+        countChar += CountCharValue(numberToConvert,"IV", -2);
         countChar += CountCharValue(numberToConvert,"V", 5);
+        countChar += CountCharValue(numberToConvert,"IX", -2);
         countChar += CountCharValue(numberToConvert,"X", 10);
         return  countChar;
     }
@@ -41,7 +39,7 @@ public class Converter {
         int countChar = 0;
         for (int i = 0; i < numberToConvert.length(); i++) {
             //Double element case ex : IV
-            if(i+2 < numberToConvert.length() && numberToConvert.substring(i,i+2).equals(romanNumber)){
+            if(i+2 <= numberToConvert.length() && numberToConvert.substring(i,i+2).equals(romanNumber)){
                 countChar += arabicNumber;
                 i++;
             }
