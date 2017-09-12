@@ -96,4 +96,10 @@ public class ConverterTest {
         Assertions.assertThat(converter.toArabicNumber("XCIX")).isEqualTo(99);
     }
 
+    @Test
+    public void should_return_four_hundred_four_in_arabic_number() throws Exception {
+        Converter converter = new Converter();
+        Assertions.assertThat(converter.toArabicNumber("CDIV")).isEqualTo(404);
+    }
+
 }

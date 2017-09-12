@@ -36,6 +36,8 @@ public class Converter {
         countChar += CountCharValue(numberToConvert,"L", 50);
         countChar += CountCharValue(numberToConvert,"XC", -20);
         countChar += CountCharValue(numberToConvert,"C", 100);
+        countChar += CountCharValue(numberToConvert,"CD", -200);
+        countChar += CountCharValue(numberToConvert,"D", 500);
         return  countChar;
     }
 
