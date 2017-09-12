@@ -102,4 +102,10 @@ public class ConverterTest {
         Assertions.assertThat(converter.toArabicNumber("CDIV")).isEqualTo(404);
     }
 
+    @Test
+    public void should_return_nine_hundred_ninety_two_in_arabic_number() throws Exception {
+        Converter converter = new Converter();
+        Assertions.assertThat(converter.toArabicNumber("CMXCII")).isEqualTo(992);
+    }
+
 }

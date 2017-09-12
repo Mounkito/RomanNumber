@@ -22,23 +22,14 @@ public class Converter {
             restToProcess -= valueToConvert;
         }
         return restToProcess;
-
     }
 
     public int toArabicNumber(String numberToConvert) {
-
-        int countChar = CountCharValue(numberToConvert,"I", 1);
-        countChar += CountCharValue(numberToConvert,"IV", -2);
-        countChar += CountCharValue(numberToConvert,"V", 5);
-        countChar += CountCharValue(numberToConvert,"IX", -2);
-        countChar += CountCharValue(numberToConvert,"X", 10);
-        countChar += CountCharValue(numberToConvert,"XL", -20);
-        countChar += CountCharValue(numberToConvert,"L", 50);
-        countChar += CountCharValue(numberToConvert,"XC", -20);
-        countChar += CountCharValue(numberToConvert,"C", 100);
-        countChar += CountCharValue(numberToConvert,"CD", -200);
-        countChar += CountCharValue(numberToConvert,"D", 500);
-        return  countChar;
+        int countValue = 0;
+        for (RomanNumber romanNumber : RomanNumber.values()) {
+            countValue += CountCharValue(numberToConvert,romanNumber.getRomanNumber(),romanNumber.getNegativeSumIfExist());
+        }
+        return countValue;
     }
 
     private int CountCharValue(String numberToConvert, String romanNumber, int arabicNumber) {
