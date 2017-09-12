@@ -90,4 +90,10 @@ public class ConverterTest {
         Assertions.assertThat(converter.toArabicNumber("XLIV")).isEqualTo(44);
     }
 
+    @Test
+    public void should_return_ninety_nine_in_arabic_number() throws Exception {
+        Converter converter = new Converter();
+        Assertions.assertThat(converter.toArabicNumber("XCIX")).isEqualTo(99);
+    }
+
 }
