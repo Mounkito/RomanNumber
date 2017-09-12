@@ -2,7 +2,7 @@ package domain;
 
 class Converter {
 
-    public String toRomanNumber(int valueToConvert) {
+    String toRomanNumber(int valueToConvert) {
         StringBuilder stringBuilder = new StringBuilder();
         int restToProcess = valueToConvert;
         for (RomanNumber romanNumber : RomanNumber.values()) {
@@ -15,7 +15,7 @@ class Converter {
         return stringBuilder.toString();
     }
 
-    public int toArabicNumber(String numberToConvert) {
+    int toArabicNumber(String numberToConvert) {
         int arabicResult = 0;
         for (RomanNumber romanNumber : RomanNumber.values()) {
             while (numberToConvert.startsWith(romanNumber.getRomanNumber())) {
