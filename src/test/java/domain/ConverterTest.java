@@ -77,10 +77,17 @@ public class ConverterTest {
         Converter converter = new Converter();
         Assertions.assertThat(converter.toArabicNumber("X")).isEqualTo(10);
     }
+
     @Test
     public void should_return_nineteen_in_arabic_number() throws Exception {
         Converter converter = new Converter();
         Assertions.assertThat(converter.toArabicNumber("XIX")).isEqualTo(19);
+    }
+
+    @Test
+    public void should_return_forty_four_in_arabic_number() throws Exception {
+        Converter converter = new Converter();
+        Assertions.assertThat(converter.toArabicNumber("XLIV")).isEqualTo(44);
     }
 
 }

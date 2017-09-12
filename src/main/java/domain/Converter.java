@@ -32,6 +32,8 @@ public class Converter {
         countChar += CountCharValue(numberToConvert,"V", 5);
         countChar += CountCharValue(numberToConvert,"IX", -2);
         countChar += CountCharValue(numberToConvert,"X", 10);
+        countChar += CountCharValue(numberToConvert,"L", 50);
+        countChar += CountCharValue(numberToConvert,"XL", -20);
         return  countChar;
     }
 
