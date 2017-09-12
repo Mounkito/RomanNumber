@@ -19,93 +19,12 @@ public class ConverterTest {
     }
 
     @Test
-    public void should_return_one_in_arabic_number() throws Exception {
+    @Parameters({"1,I", "2,II", "3,III", "4,IV", "5,V", "6,VI", "7,VII",
+            "8,VIII", "9,IX", "10,X", "45,XLV","74,LXXIV","99,XCIX",
+            "404,CDIV", "992,CMXCII", "2300, MMCCC", "3444,MMMCDXLIV"})
+    public void should_return_number_in_arabic_number(int arabicNumber, String romanNumber) throws Exception {
         Converter converter = new Converter();
-        Assertions.assertThat(converter.toArabicNumber("I")).isEqualTo(1);
-    }
-
-    @Test
-    public void should_return_five_in_arabic_number() throws Exception {
-        Converter converter = new Converter();
-        Assertions.assertThat(converter.toArabicNumber("V")).isEqualTo(5);
-    }
-
-    @Test
-    public void should_return_two_in_arabic_number() throws Exception {
-        Converter converter = new Converter();
-        Assertions.assertThat(converter.toArabicNumber("II")).isEqualTo(2);
-    }
-
-    @Test
-    public void should_return_three_in_arabic_number() throws Exception {
-        Converter converter = new Converter();
-        Assertions.assertThat(converter.toArabicNumber("III")).isEqualTo(3);
-    }
-
-    @Test
-    public void should_return_four_in_arabic_number() throws Exception {
-        Converter converter = new Converter();
-        Assertions.assertThat(converter.toArabicNumber("IV")).isEqualTo(4);
-    }
-
-    @Test
-    public void should_return_six_in_arabic_number() throws Exception {
-        Converter converter = new Converter();
-        Assertions.assertThat(converter.toArabicNumber("VI")).isEqualTo(6);
-    }
-
-    @Test
-    public void should_return_seven_in_arabic_number() throws Exception {
-        Converter converter = new Converter();
-        Assertions.assertThat(converter.toArabicNumber("VII")).isEqualTo(7);
-    }
-
-    @Test
-    public void should_return_eight_in_arabic_number() throws Exception {
-        Converter converter = new Converter();
-        Assertions.assertThat(converter.toArabicNumber("VIII")).isEqualTo(8);
-    }
-
-    @Test
-    public void should_return_nine_in_arabic_number() throws Exception {
-        Converter converter = new Converter();
-        Assertions.assertThat(converter.toArabicNumber("IX")).isEqualTo(9);
-    }
-
-    @Test
-    public void should_return_ten_in_arabic_number() throws Exception {
-        Converter converter = new Converter();
-        Assertions.assertThat(converter.toArabicNumber("X")).isEqualTo(10);
-    }
-
-    @Test
-    public void should_return_nineteen_in_arabic_number() throws Exception {
-        Converter converter = new Converter();
-        Assertions.assertThat(converter.toArabicNumber("XIX")).isEqualTo(19);
-    }
-
-    @Test
-    public void should_return_forty_four_in_arabic_number() throws Exception {
-        Converter converter = new Converter();
-        Assertions.assertThat(converter.toArabicNumber("XLIV")).isEqualTo(44);
-    }
-
-    @Test
-    public void should_return_ninety_nine_in_arabic_number() throws Exception {
-        Converter converter = new Converter();
-        Assertions.assertThat(converter.toArabicNumber("XCIX")).isEqualTo(99);
-    }
-
-    @Test
-    public void should_return_four_hundred_four_in_arabic_number() throws Exception {
-        Converter converter = new Converter();
-        Assertions.assertThat(converter.toArabicNumber("CDIV")).isEqualTo(404);
-    }
-
-    @Test
-    public void should_return_nine_hundred_ninety_two_in_arabic_number() throws Exception {
-        Converter converter = new Converter();
-        Assertions.assertThat(converter.toArabicNumber("CMXCII")).isEqualTo(992);
+        Assertions.assertThat(converter.toArabicNumber(romanNumber)).isEqualTo(arabicNumber);
     }
 
 }
