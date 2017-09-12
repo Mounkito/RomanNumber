@@ -1,25 +1,27 @@
 package domain;
 
+import java.util.OptionalInt;
+
 public enum RomanNumber {
-    THOUSAND("M", 1000, 0),
-    NINE_HUNDRED("CM", 900, -200),
-    FIVE_HUNDRED("D", 500, 0),
-    FOUR_HUNDRED("CD", 400, -200),
-    HUNDRED("C", 100, 0),
-    NINETY("XC", 90, -20),
-    FIFTY("L", 50, 0),
-    FORTY("XL", 40, -20),
-    TEN("X", 10, 0),
-    NINE("IX", 9, -2),
-    FIVE("V", 5, 0),
-    FOUR("IV", 4, -2),
-    ONE("I", 1, 0);
+    THOUSAND("M", 1000,OptionalInt.empty()),
+    NINE_HUNDRED("CM", 900,OptionalInt.of(-200)),
+    FIVE_HUNDRED("D", 500, OptionalInt.empty()),
+    FOUR_HUNDRED("CD", 400, OptionalInt.of(-200)),
+    HUNDRED("C", 100, OptionalInt.empty()),
+    NINETY("XC", 90, OptionalInt.of(-20)),
+    FIFTY("L", 50, OptionalInt.empty()),
+    FORTY("XL", 40, OptionalInt.of(-20)),
+    TEN("X", 10, OptionalInt.empty()),
+    NINE("IX", 9, OptionalInt.of(-2)),
+    FIVE("V", 5, OptionalInt.empty()),
+    FOUR("IV", 4, OptionalInt.of(-2)),
+    ONE("I", 1, OptionalInt.empty());
 
     private final int arabicNumber;
-    private final int negativeSum;
+    private final OptionalInt negativeSum;
     private String romanNumber;
 
-    RomanNumber(String romanNumber, int arabicNumber, int negativeSum) {
+    RomanNumber(String romanNumber, int arabicNumber, OptionalInt negativeSum) {
         this.romanNumber = romanNumber;
         this.arabicNumber = arabicNumber;
         this.negativeSum = negativeSum;
@@ -35,6 +37,6 @@ public enum RomanNumber {
     }
 
     public int getNegativeSumIfExist() {
-        return negativeSum == 0 ? arabicNumber : negativeSum;
+        return negativeSum.orElse(arabicNumber);
     }
 }
